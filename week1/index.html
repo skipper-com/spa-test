@@ -18,6 +18,7 @@
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control" ng-model="itemString" ng-class="input_border">
+             <!--I don't consider and empty item, i.e., `, ,` as an item towards to the count,-->
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="itemEvaluate()">Check If Too Much</button>
