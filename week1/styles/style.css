@@ -1,0 +1,12 @@
+.green_text {
+    color: green;
+}
+.green_border {
+    border: 5px solid #389238;
+}
+.red_text {
+    color: red;
+}
+.red_border {
+    border: 5px solid red;
+}
