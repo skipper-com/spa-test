@@ -29,7 +29,6 @@ function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.title = "Sample menu";
   list.found = function (itemFind) {
-      console.log("find process!");
       MenuSearchService.getMatchedMenuItems(itemFind);
   };
 
@@ -49,9 +48,6 @@ function MenuSearchService($http, ApiBasePath) {
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(response) {
-      console.log("response ", response);
-      console.log("searchTerm: ", service.searchTerm);
-      console.log("response data length: ", response.data.menu_items.length);
       var foundItems = [];
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
@@ -63,6 +59,7 @@ function MenuSearchService($http, ApiBasePath) {
           });
         }
       }
+      console.log("foundItems ", foundItems);
       return foundItems;
     });
   };
