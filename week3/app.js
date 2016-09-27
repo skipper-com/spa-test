@@ -15,7 +15,7 @@ function FoundItemsDirective() {
       myTitle: '@title',
       onRemove: '&'
     },
-    controller: NarrowItDownDirectiveController,
+    controller: NarrowItDownController,
     controllerAs: 'list',
     bindToController: true
   };
