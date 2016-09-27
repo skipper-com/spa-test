@@ -50,10 +50,13 @@ function MenuSearchService($http, ApiBasePath) {
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(response) {
       var j = 0;
+      console.log("searchItem: ", searchItem);
+      console.log("response data length: ", response.data.length);
+      console.log("response menu_items length: ", response.menu_items.length);
       for (var i = 0; i < response.data.length; i++) {
-        var menuItem = response.data[i].name;
-        if (menuItem.toLowerCase().indexOf("searchTerm") === -1) {
-          foundItems.push(menuItem, j);
+        var menuDesc = response.data[i].description;
+        if (menuDesc.toLowerCase().indexOf("searchTerm") === -1) {
+          foundItems.push(menuDesc, j);
           j++;
         }
       }
