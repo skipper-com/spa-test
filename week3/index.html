@@ -19,7 +19,10 @@
       <button class="btn btn-primary" ng-click="list.find(list.itemFind);">Narrow It Down For Me!</button>
     </div><br>
     {{ list.found }}
-    <found-items items="list" title="{{list.title}}" on-remove="list.removeItem(index)">
+    <found-items
+      items="found"
+      title="{{list.title}}"
+      on-remove="list.removeItem(index)">
     </found-items>
 
 
