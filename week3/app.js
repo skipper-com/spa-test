@@ -48,11 +48,11 @@ function MenuSearchService($http, ApiBasePath) {
     return $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
+      console.log("response ", response);
     }).then(function(response, searchItem) {
       var j = 0;
       console.log("searchItem: ", searchItem);
       console.log("response data length: ", response.data.length);
-      console.log("response menu_items length: ", response.menu_items.length);
       for (var i = 0; i < response.data.length; i++) {
         var menuDesc = response.data[i].description;
         if (menuDesc.toLowerCase().indexOf("searchTerm") === -1) {
