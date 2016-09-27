@@ -54,10 +54,10 @@ function MenuSearchService($http, ApiBasePath) {
       console.log("searchTerm: ", service.searchTerm);
       console.log("response data length: ", response.data.menu_items.length);
       var foundItems = [];
-      foundItems[0] = "tri";
-      console.log("foundItems ", foundItems[0]);
-      foundItems[0].name = "name";
-      console.log("foundItems ", foundItems[0].name);
+      // foundItems[0] = "tri";
+      // console.log("foundItems ", foundItems[0]);
+      // foundItems[0].name = "name";
+      // console.log("foundItems ", foundItems[0].name);
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
         if (menuDesc.toLowerCase().indexOf(service.searchTerm) !== -1) {
