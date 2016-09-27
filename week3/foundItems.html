@@ -1,9 +1,13 @@
 <h3>Title: {{ list.title }}</h3>
-hello
-{{ list.found }}
 <ol>
   <li ng-repeat="item in list.found">
-    {{ item.name }}, {{ item.short_name }}, {{ item.description }}
+    <table>
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>{{ item.description }}</td>
+      </tr>
+    </table>
     <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ol>
