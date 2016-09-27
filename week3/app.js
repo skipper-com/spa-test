@@ -39,7 +39,7 @@ function NarrowItDownController(MenuSearchService) {
 
 }
 
-MenuSearchService.$inject = ['$scope', '$http', 'ApiBasePath']
+MenuSearchService.$inject = ['$http', 'ApiBasePath']
 function MenuSearchService($scope, $http, ApiBasePath) {
   var service = this;
 
