@@ -47,7 +47,7 @@ function MenuSearchService($http, ApiBasePath) {
     return $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
-    }).then(function(response) {
+    }).then(function(response, searchTerm) {
       var j = 0;
       console.log("response ", response);
       console.log("searchTerm: ", searchTerm);
@@ -55,7 +55,7 @@ function MenuSearchService($http, ApiBasePath) {
       var foundItems = [];
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
-        if (menuDesc.toLowerCase().indexOf(searchTerm) === -1) {
+        if (menuDesc.toLowerCase().indexOf(searchTerm) !== -1) {
           foundItems[j].name = response.data.menu_items[i].name;
           foundItems[j].short_name = response.data.menu_items[i].short_name;
           foundItems[j].description = response.data.menu_items[i].description;
