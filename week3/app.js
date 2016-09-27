@@ -35,7 +35,6 @@ function NarrowItDownController(MenuSearchService) {
   list.removeItem = function (itemIndex) {
       list.found.splice(itemIndex, 1);
   };
-
 }
 
 MenuSearchService.$inject = ['$http', 'ApiBasePath']
@@ -49,16 +48,18 @@ function MenuSearchService($http, ApiBasePath) {
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(response) {
       var foundItems = [];
-      for (var i = 0; i < response.data.menu_items.length; i++) {
-        var menuDesc = response.data.menu_items[i].description;
-        if (menuDesc.toLowerCase().indexOf(service.searchTerm) !== -1) {
-          foundItems.push({
-            name: response.data.menu_items[i].name,
-            short_name: response.data.menu_items[i].short_name,
-            description: response.data.menu_items[i].description
-          });
+      if (service.searchTerm !== "") {
+        for (var i = 0; i < response.data.menu_items.length; i++) {
+          var menuDesc = response.data.menu_items[i].description;
+          if (menuDesc.toLowerCase().indexOf(service.searchTerm) !== -1) {
+            foundItems.push({
+              name: response.data.menu_items[i].name,
+              short_name: response.data.menu_items[i].short_name,
+              description: response.data.menu_items[i].description
+            });
+          }
         }
-      }
+      };
       console.log("foundItems ", foundItems);
       return foundItems;
     });
