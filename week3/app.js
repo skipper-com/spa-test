@@ -48,9 +48,9 @@ function MenuSearchService($http, ApiBasePath) {
     return $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
-      console.log("response ", response);
     }).then(function(response, searchItem) {
       var j = 0;
+      console.log("response ", response);
       console.log("searchItem: ", searchItem);
       console.log("response data length: ", response.data.length);
       for (var i = 0; i < response.data.length; i++) {
