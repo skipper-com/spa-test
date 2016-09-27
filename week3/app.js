@@ -22,23 +22,17 @@ function FoundItemsDirective() {
 
   return ddo;
 }
-function NarrowItDownDirectiveController () {
-  var list = this;
-
-  list.itemInList = function () {
-    
-  }
-
-}
-
-
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var list = this;
   list.title = "Sample menu";
-  list.found = function (itemFind) {
-      MenuSearchService.getMatchedMenuItems(itemFind);
+  list.find = function (itemFind) {
+    var promise = MenuSearchService.getMatchedMenuItems(itemFind);
+    promise.then(function (response) {
+        console.log("response ", response);
+        list.found = response;
+    });
   };
 
   list.removeItem = function (itemIndex) {
