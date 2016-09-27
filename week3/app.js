@@ -49,22 +49,18 @@ function MenuSearchService($http, ApiBasePath) {
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(response) {
-      var j = 0;
       console.log("response ", response);
       console.log("searchTerm: ", service.searchTerm);
       console.log("response data length: ", response.data.menu_items.length);
       var foundItems = [];
-      foundItems[0] = "tri";
-      console.log("foundItems ", foundItems[0]);
-      foundItems[0].name = "name";
-      console.log("foundItems ", foundItems[0].name);
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
         if (menuDesc.toLowerCase().indexOf(service.searchTerm) !== -1) {
-          foundItems[j].name = response.data.menu_items[i].name;
-          foundItems[j].short_name = response.data.menu_items[i].short_name;
-          foundItems[j].description = response.data.menu_items[i].description;
-          j++;
+          foundItems.push({
+            name: response.data.menu_items[i].name,
+            short_name: response.data.menu_items[i].short_name,
+            description: response.data.menu_items[i].description
+          });
         }
       }
       return foundItems;
