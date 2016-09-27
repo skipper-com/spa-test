@@ -11,7 +11,7 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
-      list: '<',
+      items: '<',
       myTitle: '@title',
       onRemove: '&'
     },

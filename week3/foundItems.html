@@ -1,10 +1,10 @@
-<h3>Title: {{ list.myTitle }}</h3>
+<h3>Title: {{ items.myTitle }}</h3>
 hello
-{{ list.found }}
+{{ items.found }}
 <ol>
-  <li ng-repeat="item in list.found">
+  <li ng-repeat="item in items.found">
     {{ item.name }}, {{ item.short_name }}, {{ item.description }}
-    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    <button ng-click="items.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ol>
-<div ng-if="list.found.length === 0">Nothing is found</div>
+<div ng-if="items.found.length === 0">Nothing is found</div>
