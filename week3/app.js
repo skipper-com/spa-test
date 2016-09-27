@@ -50,12 +50,12 @@ function MenuSearchService($http, ApiBasePath) {
     }).then(function(response) {
       var j = 0;
       console.log("response ", response);
-      console.log("searchTerm: ", $scope.searchTerm);
+      console.log("searchTerm: ", searchTerm);
       console.log("response data length: ", response.data.menu_items.length);
       var foundItems = [];
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
-        if (menuDesc.toLowerCase().indexOf($scope.searchTerm) === -1) {
+        if (menuDesc.toLowerCase().indexOf(searchTerm) === -1) {
           foundItems[j].name = response.data.menu_items[i].name;
           foundItems[j].short_name = response.data.menu_items[i].short_name;
           foundItems[j].description = response.data.menu_items[i].description;
