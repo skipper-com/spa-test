@@ -11,8 +11,8 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
-      items: '<',
-      myTitle: '@title',
+      found: '<',
+      title: '@title',
       onRemove: '&'
     },
     controller: NarrowItDownController,
