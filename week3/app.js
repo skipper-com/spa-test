@@ -44,15 +44,16 @@ function MenuSearchService($http, ApiBasePath) {
   var service = this;
 
   service.getMatchedMenuItems = function (searchTerm) {
-    var foundItems = [];
+    console.log("searchTerm: ", searchTerm);
     return $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(response, searchTerm) {
       var j = 0;
       console.log("response ", response);
-      console.log("searchItem: ", searchTerm);
+      console.log("searchTerm: ", searchTerm);
       console.log("response data length: ", response.data.menu_items.length);
+      var foundItems = [];
       for (var i = 0; i < response.data.menu_items.length; i++) {
         var menuDesc = response.data.menu_items[i].description;
         if (menuDesc.toLowerCase().indexOf("searchTerm") === -1) {
