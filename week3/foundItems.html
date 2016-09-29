@@ -1,10 +1,20 @@
 <h3>Title: {{ list.title }}</h3>
 <table>
-  <tr ng-repeat="item in list.found">
-    <td>{{ item.name }}</td>
-    <td>{{ item.short_name }}</td>
-    <td>{{ item.description }}</td>
-    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
-  </tr>
+  <thead>
+    <tr>
+      <td>Item name</td>
+      <td>Item short name</td>
+      <td>Description</td>
+      <td>Delete item</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in list.found">
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td><button ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+    </tr>
+  </tbody>
 </table>
 <div ng-if="list.found.length === 0">Nothing is found</div>
