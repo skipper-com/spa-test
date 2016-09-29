@@ -1,14 +1,14 @@
 <h3>Title: {{ list.title }}</h3>
-<ol>
-  <li ng-repeat="item in list.found">
-    <table>
-      <tr>
+<table>
+  <ol>
+    <tr ng-repeat="item in list.found">
+      <li>
         <td>{{ item.name }}</td>
         <td>{{ item.short_name }}</td>
         <td>{{ item.description }}</td>
+        <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+        </li>
       </tr>
-    </table>
-    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
-  </li>
-</ol>
+  </ol>
+</table>
 <div ng-if="list.found.length === 0">Nothing is found</div>
