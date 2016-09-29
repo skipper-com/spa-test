@@ -49,10 +49,8 @@ function SpinnerController($rootScope) {
 
 };
 
-
-
-NarrowItDownController.$inject = ['MenuSearchService'];
-function NarrowItDownController(MenuSearchService) {
+NarrowItDownController.$inject = ['$rootScope', 'MenuSearchService'];
+function NarrowItDownController($rootScope, MenuSearchService) {
   var list = this;
   list.title = "Sample menu";
   list.find = function (itemFind) {
