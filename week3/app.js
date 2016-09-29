@@ -61,7 +61,7 @@ function NarrowItDownController(MenuSearchService) {
     promise.then(function (response) {
         console.log("response ", response);
         list.found = response;
-    }).
+    })
     .finally(function () {
       $rootScope.$broadcast('shoppinglist:processing', { on: false });
     });
