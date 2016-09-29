@@ -37,6 +37,7 @@ function SpinnerController($rootScope) {
 
     if (data.on) {
       $ctrl.showSpinner = true;
+      console.log("show spinner");
     }
     else {
       $ctrl.showSpinner = false;
