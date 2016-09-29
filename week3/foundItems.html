@@ -1,13 +1,5 @@
 <h3>Title: {{ list.title }}</h3>
 <table>
-  <thead>
-    <tr>
-      <td>Item name</td>
-      <td>Item short name</td>
-      <td>Description</td>
-      <td>Delete item</td>
-    </tr>
-  </thead>
   <tbody>
     <tr ng-repeat="item in list.found">
       <td>{{ item.short_name }}</td>
