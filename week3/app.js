@@ -5,7 +5,7 @@ angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundItemsDirective)
-.component('loadingSpinner', {
+.component('itemsLoaderIndicator', {
   templateUrl: 'loader/itemsloaderindicator.template.html',
   controller: SpinnerController
 })
