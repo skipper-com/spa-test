@@ -33,7 +33,7 @@ input[type="text"] {
 .loading-icon {
   position: absolute;
   left: calc(100% / 2);
-  top: 10px;
+  top: calc(100% / 2);
 }
 @-webkit-keyframes load8 {
   0% {
