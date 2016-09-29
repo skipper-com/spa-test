@@ -41,6 +41,7 @@ function SpinnerController($rootScope) {
     }
     else {
       $ctrl.showSpinner = false;
+      console.log("hide spinner");
     }
   });
 
