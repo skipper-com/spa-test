@@ -57,7 +57,6 @@ function NarrowItDownController($rootScope, MenuSearchService) {
     $rootScope.$broadcast('shoppinglist:processing', {on: true});
     var promise = MenuSearchService.getMatchedMenuItems(itemFind);
     promise.then(function (response) {
-        console.log("response ", response);
         list.found = response;
     })
     .finally(function () {
@@ -93,7 +92,6 @@ function MenuSearchService($http, ApiBasePath) {
           }
         }
       };
-      console.log("foundItems ", foundItems);
       return foundItems;
     });
   };
