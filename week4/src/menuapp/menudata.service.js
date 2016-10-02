@@ -24,7 +24,7 @@ function MenuDataService($http) {
             description: response.data[i].description
           });
         }
-        console.log(categories);
+        console.log(categories[0].name);
       return "hello";
     });
   };
