@@ -13,8 +13,17 @@ function MenuDataService($http) {
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/categories.json")
     }).then(function(response) {
-      console.log(response.data);
-      return response.data;
+      console.log(response);
+      var categories = [];
+      for (var i = 0; i < response.length; i++) {
+        categories.push({
+            name: response.data[i].name,
+            short_name: response.data[i].short_name,
+            description: response.data[i].description
+          });
+        }
+        console.log(categories);
+      return categories;
     });
   };
 
