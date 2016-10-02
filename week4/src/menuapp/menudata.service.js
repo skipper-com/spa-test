@@ -18,7 +18,6 @@ function MenuDataService($http) {
         categories.push({
             name: response.data[i].name,
             short_name: response.data[i].short_name,
-            description: response.data[i].description
           });
         }
       return categories;
