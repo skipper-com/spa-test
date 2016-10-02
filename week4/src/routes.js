@@ -30,20 +30,20 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  // .state('items', {
-  //   url: '/items/{categoryShortName}',
-  //   templateUrl: 'src/menuapp/templates/items.template.html',
-  //   controller: 'ItemsController as itemsList',
-  //   resolve: {
-  //     category: ['$stateParams', 'MenuDataService',
-  //           function ($stateParams, MenuDataService) {
-  //             return MenuDataService.getAllCategories()
-  //               .then(function (categories) {
-  //                 return categories[$stateParams.categoryShortName];
-  //               });
-  //           }]
-  //   }
-  // });
+  .state('items', {
+    url: '/items/{categoryShortName}',
+    templateUrl: 'src/menuapp/templates/items.template.html',
+    controller: 'ItemsController as itemsList',
+    resolve: {
+      category: ['$stateParams', 'MenuDataService',
+            function ($stateParams, MenuDataService) {
+              return MenuDataService.getAllCategories()
+                .then(function (categories) {
+                  return categories[$stateParams.categoryShortName];
+                });
+            }]
+    }
+  });
 }
 
 })();
