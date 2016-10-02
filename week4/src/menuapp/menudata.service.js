@@ -14,8 +14,10 @@ function MenuDataService($http) {
       url: ("https://davids-restaurant.herokuapp.com/categories.json")
     }).then(function(response) {
       console.log(response);
+      console.log(response.data.length);
+      console.log(response.data[0].name);
       var categories = [];
-      for (var i = 0; i < response.length; i++) {
+      for (var i = 0; i < response.data.length; i++) {
         categories.push({
             name: response.data[i].name,
             short_name: response.data[i].short_name,
@@ -23,7 +25,7 @@ function MenuDataService($http) {
           });
         }
         console.log(categories);
-      return categories;
+      return "hello";
     });
   };
 
