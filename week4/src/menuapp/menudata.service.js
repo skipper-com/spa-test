@@ -12,12 +12,7 @@ function MenuDataService($http) {
     return $http({
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/categories.json")
-    }).then(function(response) {
-      console.log(response);
-      var categories = response;
-      console.log(categories);
-      return categories;
-    });
+    })
   };
 
   service.getItemsForCategory = function (categoryShortName) {
