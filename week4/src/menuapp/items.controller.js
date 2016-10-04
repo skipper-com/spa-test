@@ -10,7 +10,7 @@ function ItemsController(items) {
   var categoryItems = this;
   categoryItems.name = items.name;
   categoryItems.short_name = items.short_name;
-  categoryItems.description = item.description;
+  categoryItems.description = items.description;
 
 }
 
