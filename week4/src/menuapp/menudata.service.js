@@ -34,9 +34,9 @@ function MenuDataService($http) {
       var categoryDetails = [];
       for (var i = 0; i < response.data.length; i++) {
         categoryDetails.push({
-            name: response.data[i].name,
-            short_name: response.data[i].short_name,
-            description: response.data[i].description,
+            name: response.data.menu_items[i].name,
+            short_name: response.data.menu_items[i].short_name,
+            description: response.data.menu_items[i].description,
           });
         }
       return categoryDetails;
