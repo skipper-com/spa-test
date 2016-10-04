@@ -8,12 +8,9 @@ angular.module('MenuApp')
 ItemsController.$inject = ['items']
 function ItemsController(items) {
   var categoryItems = this;
-  categoryItems.name = items.name;
-  categoryItems.short_name = items.short_name;
-  categoryItems.description = items.description;
+  categoryItems.items = items;
   console.log("items ", items);
-  console.log("categoryItems ", categoryItems);
-
+  console.log("categoryItems ", categoryItems.items);
 }
 
 })();

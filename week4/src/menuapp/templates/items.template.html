@@ -3,6 +3,8 @@
 
 
 <span> {{ categoryItems.name }} </span>
-<div>Category name: {{ categoryItems.name }}</div>
-<div>Category short name: {{ categoryItems.shortName }}</div>
-<div>Category description: {{ categoryItems.description }}</div>
+<ul>
+  <li ng-repeat="item in categoryItems.items">
+    {{ categoryItems.name }} ({{ categoryItems.shortName }}) - {{ categoryItems.description }}
+  </li>
+</ul>
