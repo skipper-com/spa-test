@@ -30,6 +30,7 @@ function MenuDataService($http) {
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)
     }).then(function(response) {
+      console.log("response", response);
       console.log("response data length", response.data.length);
       console.log("response data menu_item", response.data.menu_items[0].name);
       var categoryDetails = [];
