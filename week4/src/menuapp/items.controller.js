@@ -11,6 +11,8 @@ function ItemsController(items) {
   categoryItems.name = items.name;
   categoryItems.short_name = items.short_name;
   categoryItems.description = items.description;
+  console.log("items ", items);
+  console.log("categoryItems ", categoryItems);
 
 }
 
