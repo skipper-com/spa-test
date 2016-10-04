@@ -34,7 +34,7 @@ function MenuDataService($http) {
       console.log("response data length", response.data.length);
       console.log("response data menu_item", response.data.menu_items[0].name);
       var categoryDetails = [];
-      for (var i = 0; i < response.data.length; i++) {
+      for (var i = 0; i < response.data..menu_items.length; i++) {
         categoryDetails.push({
             name: response.data.menu_items[i].name,
             short_name: response.data.menu_items[i].short_name,
