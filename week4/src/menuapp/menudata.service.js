@@ -33,6 +33,7 @@ function MenuDataService($http) {
       var categoryDetails = [];
       for (var i = 0; i < response.data.menu_items.length; i++) {
         categoryDetails.push({
+            category: response.data.category.name,
             name: response.data.menu_items[i].name,
             short_name: response.data.menu_items[i].short_name,
             description: response.data.menu_items[i].description,
