@@ -1,0 +1,87 @@
+<h1>Sign Up For Newsletter</h1>
+<fieldset>
+  <form name='signupForm' novalidate>
+    <table>
+      <tr>
+        <td>
+          Your first name
+        </td>
+        <td>
+          <input type="text" name="firstname" placeholder="e.g. Alex" ng-model="signupCtrl.user.firstname" required>
+        </td>
+        <td>
+          <span ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched" class="minired">
+            First name must be entered
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Your last name
+        </td>
+        <td>
+          <input type="text" name="lastname" placeholder="e.g. Smith" ng-model="signupCtrl.user.lastname" required>
+        </td>
+        <td>
+          <span ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">
+          Last name must be entered
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Your email
+        </td>
+        <td>
+          <input type="email" name="email" placeholder="e.g. alex@smith.com" ng-model="signupCtrl.user.email" required>
+        </td>
+        <td>
+          <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+          Must be a valid email address: handle@domain format
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Your phone
+        </td>
+        <td>
+          <input type="text" name="phone" placeholder="e.g. 555-555-5555" ng-model="signupCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+        </td>
+        <td>
+          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Your favourite menu category
+        </td>
+        <td>
+          <input type="text" name="short_name" placeholder="e.g. A1 or B14" ng-model="signupCtrl.user.short_name" ng-blur="signupCtrl.checkShortName(signupCtrl.user.short_name)" required>
+        </td>
+        <td>
+          <span id="info" ng-if="signupCtrl.noSuchMenuNumber && signupForm.short_name.$touched">
+            No such menu number exists
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</fieldset>
+<span id="info" ng-if="signupCtrl.completed" class="green">Your information has been saved.</span>
